@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RILKA</title>
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700italic,700|Work+Sans:400,300,500,600,700,900,800' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <script type="text/javascript">
+    $(function() {
+      $('a[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html, body').animate({
+              scrollTop: target.offset().top
+            }, 500);
+            return false;
+          }
+        }
+      });
+    });
+  </script>
+  <script type="text/javascript">
+    document.onmousemove = function (e) {
+      var x = e.clientX - innerWidth/2,
+          y = e.clientY - innerHeight/2,
+          yawn = x / innerWidth * 400,
+          pitch = y / innerHeight * 400;
+
+      document.querySelector('#cube .front').style.transform = 'rotateX( '+ (0+pitch) +'deg ) rotateY( '+ (0+yawn) +'deg ) translateZ( 100px )';
+      document.querySelector('#cube .back').style.transform = 'rotateX( '+ (180+pitch) +'deg ) rotateY( '+ (0-yawn) +'deg ) translateZ( 100px )';
+      document.querySelector('#cube .right').style.transform = 'rotateX( '+ (0+pitch) +'deg ) rotateY( '+ (90+yawn) +'deg ) translateZ( 100px )';
+      document.querySelector('#cube .left').style.transform = 'rotateX( '+ (0+pitch) +'deg ) rotateY( '+ (-90+yawn) +'deg ) translateZ( 100px )';
+      document.querySelector('#cube .top').style.transform = 'rotateX( '+ (90+pitch) +'deg ) rotateZ( '+ (0-yawn) +'deg ) translateZ( 100px )';
+      document.querySelector('#cube .bottom').style.transform = 'rotateX( '+ (-90+pitch) +'deg ) rotateZ( '+ (0+yawn) +'deg ) translateZ( 100px )';
+    };
+  </script>
+</head>
+
+<body id="landing">
+  <div class="nav nav-top nav-left">
+    <a href=""><h5>About</h5></a>
+  </div>
+  <div class="nav nav-top nav-right">
+    <a href=""><h5>Projects</h5></a>
+  </div>
+  <div class="nav nav-bottom nav-left">
+    <a href=""><h5>Contact</h5></a>
+  </div>
+  <div class="nav nav-bottom nav-right">
+    <a href=""><h5>Jobs</h5></a>
+  </div>
+  <section>
+    <div class="container">
+      <a id="cube" href="#intro">
+        <figure class="front"></figure>
+        <figure class="back"></figure>
+        <figure class="right"></figure>
+        <figure class="left"></figure>
+        <figure class="top"></figure>
+        <figure class="bottom"></figure>
+      </a>
+    </div>
+  </section>
+  <section id="intro">
+    <p>Hi, we&#8217re <span style="border-bottom:solid .2em #ffd5af;">Rilka</span><span class="peach">.</span>  We&#8217re a design and development studio based in LA and SF<span class="peach">.</span> We see ourselves as explorers in all fields of design (print and digital) and development (full-stack, cross-platform)<span class="peach">.</span> Research, experimentation, and delight are essential components of our practice at every step – from conception to the final product<span class="peach">.</span> Throughout the design process, we aim to be advisors and open-minded companions to you and your vision<span class="peach">.</span></p>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RILKAS</title>
+  <link href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,900,800,700' rel='stylesheet' type='text/css'>
+  <link href="css/zoom.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="js/zoom.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+  <style>
+
+    #cube .front, #cube .back, #cube .right, #cube .left {
+      background-image: url("img/r-mask_invert@2x.png");
+      background-size: 200px 200px;
+      background-repeat: no-repeat;
+    }
+
+    #cube .top, #cube .bottom {
+      background-image: url("img/r-mask_white_20@2x.png");
+      background-size: 200px 200px;
+      background-repeat: no-repeat;
+    }
+
+  </style>
+
+  <script type="text/javascript">
+    document.onmousemove = function (e) {
+      var x = e.clientX - innerWidth/2,
+          y = e.clientY - innerHeight/2,
+          yawn = x / innerWidth * 400,
+          pitch = y / innerHeight * 400;
+
+      document.querySelector('#cube .front').style.transform = 'rotateX( '+ (0+pitch) +'deg ) rotateY( '+ (0+yawn) +'deg ) translateZ( 100px )';
+      document.querySelector('#cube .back').style.transform = 'rotateX( '+ (180+pitch) +'deg ) rotateY( '+ (0-yawn) +'deg ) translateZ( 100px )';
+      document.querySelector('#cube .right').style.transform = 'rotateX( '+ (0+pitch) +'deg ) rotateY( '+ (90+yawn) +'deg ) translateZ( 100px )';
+      document.querySelector('#cube .left').style.transform = 'rotateX( '+ (0+pitch) +'deg ) rotateY( '+ (-90+yawn) +'deg ) translateZ( 100px )';
+      document.querySelector('#cube .top').style.transform = 'rotateX( '+ (90+pitch) +'deg ) rotateZ( '+ (0-yawn) +'deg ) translateZ( 100px )';
+      document.querySelector('#cube .bottom').style.transform = 'rotateX( '+ (-90+pitch) +'deg ) rotateZ( '+ (0+yawn) +'deg ) translateZ( 100px )';
+    };
+  </script>
+
+</head>
+
+<body>
+
+  <div class="nav">
+    <a href=""><h5></h5></a>
+    <a href=""><h5>About</h5></a>
+    <a href=""><h5>Projects</h5></a>
+    <a href=""><h5>Jobs</h5></a>
+  </div>
+
+  <div class="container">
+    <div id="cube">
+      <figure class="front"></figure>
+      <figure class="back"></figure>
+      <figure class="right"></figure>
+      <figure class="left"></figure>
+      <figure class="top"></figure>
+      <figure class="bottom"></figure>
+    </div>
+  </div>
+
+</body>
+
+</html>

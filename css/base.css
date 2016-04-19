@@ -244,13 +244,14 @@ a#cube {
   font-size: 1.25em;
 }
 
-#blurb > div, #blurb > h1 {
+#blurb > div {
   margin-top: 3em;
   text-align: center;
 }
 
 #blurb > h1 {
   margin-bottom: 1em;
+  text-align: center
 }
 
 

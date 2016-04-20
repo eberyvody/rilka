@@ -88,8 +88,8 @@ li {
 }
 
 li:before {
-  content: "• ";
-  color: rgba(96,152,238,1);
+  content: '\2022';
+  color: rgba(96,238,190,.4);
   padding-right: .5em;
 }
 
@@ -299,6 +299,13 @@ a {
   color: rgba(96,152,238,1);
 }
 
+li > a {
+  cursor: -webkit-image-set(
+    url('/img/right-peach@1x.png') 1x,
+    url('/img/right-peach@2x.png') 2x
+  ), auto;
+}
+
 
 /*  LANDING  */
 
@@ -502,7 +509,7 @@ body > div.story > section > p > a:hover {
   padding: 1.5em 2em 5em 2em;
 }
 
-.story > section > img:not(.half-img) {
+img {
   width: 100%;
   height: auto;
 }
